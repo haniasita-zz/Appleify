@@ -12,5 +12,5 @@ The purpose of this script is to easily prepare an existing music library with F
 - Once the script is done, the provided library should have all of it's FLAC and WMA files replaced with ALAC and MP3 files, with correct folder structures and metadata
 
 # Notes
-- This script will not work with files who contain percentage signs or exclamation marks. This is a limitation of Batch.
+- This script will not work with files who contain percentage signs or exclamation marks. It will detect them, but will not convert them. This is a limitation of Batch.
 - The "Originals" folder does not retain the original file structure of the provided folder.
