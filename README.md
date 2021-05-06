@@ -13,3 +13,4 @@ The purpose of this script is to easily prepare an existing music library with F
 
 # Notes
 - This script will not work with files who contain percentage signs or exclamation marks. This is a limitation of Batch.
+- The "Originals" folder does not retain the original file structure of the provided folder.
