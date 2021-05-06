@@ -1,5 +1,5 @@
 @echo off
-REM Appleify Script v1 - Haniasita, 2021
+REM Appleify Script v1.1 - Haniasita, 2021
 
 :SETUP
 REM Console setup
@@ -15,7 +15,7 @@ set "_outputFile=None"
 set "_targetFolder=None"
 
 REM Run once
-title Appleify Script v1
+title Appleify Script v1.1
 call :COLORECHO 5b "Appleify Script - Converts your music library for iTunes support!"
 REM Delayed Expansion needs to be enabled AFTER this message so that "!" isn't interpreted as a variable
 setlocal EnableDelayedExpansion
@@ -95,22 +95,23 @@ for /R %_targetFolder% %%F in (*.*) do set /a "_totalFiles=!_totalFiles!+1"
 call :COLORECHO 0a "%_totalFiles%"
 echo  total files in library
 echo.
-REM Count and display files eligible for FLAC conversion, including path
+REM Count files eligible for FLAC conversion, showing path
 for /R %_targetFolder% %%F in (*.flac) do (
 	set /a "_flacFiles=!_flacFiles!+1"
 	call :COLORECHO 0a "Found FLAC file"
 	echo  : %%F
 	)
 echo.
-call :COLORECHO 0a "%_flacFiles%"
-echo  FLAC files eligible for conversion
-echo.
-REM Count and display files eligible for WMA conversion, including path
+REM Count files eligible for WMA conversion, showing path
 for /R %_targetFolder% %%F in (*.wma) do (
 	set /a "_wmaFiles=!_wmaFiles!+1"
 	call :COLORECHO 0a "Found WMA file"
 	echo  : %%F
 	)
+echo.
+REM Display results
+call :COLORECHO 0a "%_flacFiles%"
+echo  FLAC files eligible for conversion
 echo.
 call :COLORECHO 0a "%_wmaFiles%"
 echo  WMA files eligible for conversion
